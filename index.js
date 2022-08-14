@@ -1,8 +1,8 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-const manager = require('./lib/manager.js');
-const engineer = require('./lib/engineer.js');
-const intern = require('./lib/intern.js');
+const Manager = require('./lib/manager');
+const Engineer = require('./lib/engineer');
+const Intern = require('./lib/intern');
 
 const managerQuestions = [
     {
@@ -100,7 +100,7 @@ const employees = [];
 function init() {
     inquirer.prompt(managerQuestions)
 .then((response) => {
-    const manager = new manager(response.managerName, response.managerId, response.managerEmail, response.managerOfficeNum);
+    const manager = new Manager(response.managerName, response.managerId, response.managerEmail, response.managerOfficeNum);
     employees.push(manager);
     if (response.addTeammate) {
         getEmployeeType ();
