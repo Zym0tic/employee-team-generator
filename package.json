@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Zym0tic/employee-team-generator/issues"
   },
-  "homepage": "https://github.com/Zym0tic/employee-team-generator#readme"
+  "homepage": "https://github.com/Zym0tic/employee-team-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  }
 }
