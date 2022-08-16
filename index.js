@@ -1,5 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
+const writeHtml = require("./src/write");
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
@@ -156,8 +157,6 @@ function getIntern() {
         return writeHtml();
     })
 }
-
-function writeHtml() {}
 
 // initialize app
 
