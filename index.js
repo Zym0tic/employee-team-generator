@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
-const writeHtml = require("./src/write");
+const { writeHtml } = require("./src/write");
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
@@ -112,8 +112,8 @@ function init() {
     employees.push(manager);
     if (response.addTeammate) {
       return getEmployeeType();
-    };
-      return writeHtml();
+    }
+      return writeFile();
   });
 };
 
@@ -138,7 +138,7 @@ function getEngineer() {
     if (response.addTeammate) {
       return getEmployeeType();
     };
-      return writeHtml();
+      return writeFile();
   });
 }
 
@@ -154,8 +154,13 @@ function getIntern() {
         if (response.addTeammate) {
             return getEmployeeType();
         };
-        return writeHtml();
+        return writeFile();
     })
+}
+
+function writeFile() {
+  fs.writeFile("./dist/index.html", employees, (err) => 
+  err ? console.log(err) : console.log("sucessfully wrote file."))
 }
 
 // initialize app
